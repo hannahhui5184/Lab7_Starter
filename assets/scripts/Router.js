@@ -75,10 +75,12 @@ export class Router {
     let currHash = (page == 'home') ? '' : ('#' + page);
 
     if (!statePopped && (window.location.hash !== currHash)) {
+      console.log(window.location.origin + window.location.pathname + currHash);
       let state = {statePage: page, hash: currHash};
       history.pushState(state, '', window.location.origin + window.location.pathname + currHash);      
     }
 
+    console.log(this[page]);
     this[page].call();
   }
 }

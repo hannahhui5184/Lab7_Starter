@@ -225,6 +225,7 @@ function bindPopstate() {
 
   window.addEventListener('popstate', e => {
     let state = e.state;
+    console.log(e.state);
     if (state === null || typeof state === "undefined") {
       router.navigate('home', true);
     }
